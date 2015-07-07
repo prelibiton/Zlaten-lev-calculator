@@ -15,13 +15,13 @@ public class Connector {
 	        Elements prices = doc.select("strong");
 	        int i = 0;
 	        char[] str = new char[5];
-	        char[] date = new char[35];
+	        char[] date = new char[10];
 	        double value;
 	    
 	        
 	        for (Element price : prices) {
 	        	i = i + 1;
-	        	if(i == 1) price.text().getChars(24,34,date,0); 
+	        	if(i == 1) price.text().getChars(24,34,date,0);
 	        	if(i == 5) {
 	        		price.text().getChars(0, 5, str, 0);
 	        		value = Double.parseDouble(String.valueOf(str));
