@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class Connector {
 
-	char[] str = new char[5];
+	char[] str = new char[6];
     char[] date = new char[10];
     double value;
     
@@ -22,7 +22,7 @@ public class Connector {
 		i = i + 1;
     	if(i == 1) price.text().getChars(24,34,date,0);
     	if(i == 5) {
-    		price.text().getChars(0, 5, str, 0);
+    		price.text().getChars(0, 6, str, 0);
     		value = Double.parseDouble(String.valueOf(str));
 
 	        	}
