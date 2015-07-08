@@ -8,11 +8,15 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class App {
 
 	private JFrame frmZlatenLevCalculator;
 	private JTextField txtTmp;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -53,14 +57,15 @@ public class App {
 		Connector connect = new Connector();
 		
 		JButton btnCalculate = new JButton("Calculate");
+		btnCalculate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String textFieldValue = textField.getText();
+				double shares = Double.parseDouble(textFieldValue);
+				textField_1.setText(String.valueOf(shares*connect.value));
+			}
+		});
 		btnCalculate.setBounds(161, 135, 97, 25);
 		frmZlatenLevCalculator.getContentPane().add(btnCalculate);
-		
-		txtTmp = new JTextField();
-		txtTmp.setText("tmp");
-		txtTmp.setBounds(151, 89, 145, 33);
-		frmZlatenLevCalculator.getContentPane().add(txtTmp);
-		txtTmp.setColumns(10);
 		
 		
 		JTextArea txtrDate = new JTextArea();
@@ -86,5 +91,16 @@ public class App {
 		JLabel lblShares = new JLabel("\u0414\u044F\u043B\u043E\u0432\u0435");
 		lblShares.setBounds(95, 97, 56, 16);
 		frmZlatenLevCalculator.getContentPane().add(lblShares);
+		
+		textField = new JTextField();
+		textField.setBounds(153, 94, 116, 22);
+		frmZlatenLevCalculator.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setEditable(false);
+		textField_1.setBounds(153, 185, 116, 22);
+		frmZlatenLevCalculator.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
 	}
 }
