@@ -1,4 +1,7 @@
 import java.awt.EventQueue;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JFrame;
@@ -63,9 +66,12 @@ public class App {
 			public void actionPerformed(ActionEvent e) {
 				String textFieldValue = textField.getText();
 				double shares = Double.parseDouble(textFieldValue);
-				textField_1.setText(String.valueOf( Math.round(shares*connect.value*100.0) / 100.0));
+				textField_1.setText(String.valueOf( 
+					Math.round(shares*connect.value*100.0) / 100.0));
 				try {
-					new Log(connect, String.valueOf( Math.round(shares*connect.value*100.0) / 100.0));
+					new Log(connect, String.valueOf( 
+							Math.round(shares*connect.value*100.0) / 100.0), 
+							textField.getText());
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
@@ -88,6 +94,14 @@ public class App {
 		frmZlatenLevCalculator.getContentPane().add(lblShares);
 		
 		textField = new JTextField();
+		File desktop = 
+				new File(System.getProperty("user.home"), "Desktop");
+		BufferedReader breadr = 
+				new BufferedReader(new FileReader(desktop + "/Desktop" + "_logFile.txt")); 
+		String shares = new String();
+		shares = breadr.readLine();
+		if ( shares != null) textField.setText(shares);
+		breadr.close();
 		textField.setBounds(153, 94, 116, 22);
 		frmZlatenLevCalculator.getContentPane().add(textField);
 		textField.setColumns(10);
