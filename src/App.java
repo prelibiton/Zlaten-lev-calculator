@@ -15,7 +15,6 @@ import java.awt.Color;
 public class App {
 
 	private JFrame frmZlatenLevCalculator;
-	private JTextField txtTmp;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField txtDate;

@@ -4,12 +4,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Log {
-
-	String fileName = "logFile.txt";
 	
 	public Log(Connector c, String str) throws IOException{
         
-		File desktop = new File(System.getProperty("user.home"), "Desktop");
+		File desktop = 
+				new File(System.getProperty("user.home"), "Desktop");
         FileWriter fileWriter =
             new FileWriter(desktop + "/Desktop" + "_logFile.txt",true);
         BufferedWriter bufferedWriter =
