@@ -10,13 +10,13 @@ public class Log {
 	public Log(Connector c, String str, String str2) throws IOException{
         
 		File desktop = 
-			new File(System.getProperty("user.home"), "Desktop");
+			new File(System.getProperty("user.home"), "/Desktop/Zlaten_lev.txt");
         FileWriter fileWriter =
-            new FileWriter(desktop + "/Desktop" + "_logFile.txt",true);
+            new FileWriter(desktop,true);
         BufferedWriter bufferedWriter =
             new BufferedWriter(fileWriter);
         
-        BufferedReader br = new BufferedReader(new FileReader(desktop + "/Desktop" + "_logFile.txt"));     
+        BufferedReader br = new BufferedReader(new FileReader(desktop));     
         if (br.readLine() == null) {
         	bufferedWriter.write(str2);
         	bufferedWriter.newLine();

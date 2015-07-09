@@ -95,10 +95,10 @@ public class App {
 		
 		textField = new JTextField();
 		File desktop = 
-				new File(System.getProperty("user.home"), "Desktop"); 
-		if ( new File(desktop + "/Desktop" + "_logFile.txt").isFile() == true ){
+				new File(System.getProperty("user.home"), "/Desktop/Zlaten_lev.txt");
+		if (desktop.isFile() == true ){
 			BufferedReader breadr = 
-					new BufferedReader(new FileReader(desktop + "/Desktop" + "_logFile.txt"));
+					new BufferedReader(new FileReader(desktop));
 		textField.setText(breadr.readLine());
 		breadr.close();
 		}
