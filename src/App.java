@@ -65,6 +65,12 @@ public class App {
 				String textFieldValue = textField.getText();
 				double shares = Double.parseDouble(textFieldValue);
 				textField_1.setText(String.valueOf( Math.round(shares*connect.value*100.0) / 100.0));
+				try {
+					new Log(connect, String.valueOf( Math.round(shares*connect.value*100.0) / 100.0));
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		btnCalculate.setBounds(70, 166, 97, 25);
