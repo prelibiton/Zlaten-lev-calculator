@@ -95,13 +95,13 @@ public class App {
 		
 		textField = new JTextField();
 		File desktop = 
-				new File(System.getProperty("user.home"), "Desktop");
-		BufferedReader breadr = 
-				new BufferedReader(new FileReader(desktop + "/Desktop" + "_logFile.txt")); 
-		String shares = new String();
-		shares = breadr.readLine();
-		if ( shares != null) textField.setText(shares);
+				new File(System.getProperty("user.home"), "Desktop"); 
+		if ( new File(desktop + "/Desktop" + "_logFile.txt").isFile() == true ){
+			BufferedReader breadr = 
+					new BufferedReader(new FileReader(desktop + "/Desktop" + "_logFile.txt"));
+		textField.setText(breadr.readLine());
 		breadr.close();
+		}
 		textField.setBounds(153, 94, 116, 22);
 		frmZlatenLevCalculator.getContentPane().add(textField);
 		textField.setColumns(10);
