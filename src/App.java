@@ -5,15 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JFrame;
-import javax.swing.JRadioButton;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
 
 public class App {
 
